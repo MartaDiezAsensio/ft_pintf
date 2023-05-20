@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:13:55 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 20:04:06 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 21:33:20 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int main()
 	int	digits;
 	char	*s;
 
-	s = NULL;
-	printf(" NULL %s NULL \n", NULL);
-	ft_printf(" NULL %s NULL \n", s);
+	//printf("%d", printf(" %p \n", -1));
+	//ft_printf(" %p \n", -1);
+	printf(" %u \n", -3);
+	ft_printf(" %u ", -3);
 }
