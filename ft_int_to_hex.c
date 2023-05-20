@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:30:37 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:09:10 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:38:13 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	ft_count_dig_hex(unsigned int nb)
 {
-	int	i;
-	int	temp;
+	int				i;
+	unsigned int	temp;
 
 	i = 0;
 	while (nb != 0)
@@ -29,10 +29,10 @@ static int	ft_count_dig_hex(unsigned int nb)
 
 int	ft_int_to_hex(unsigned int nb)
 {
-	int		alloc;
-	int		temp;
-	char	*hex;
-	int		i;
+	int					alloc;
+	unsigned int		temp;
+	char				*hex;
+	int					i;
 
 	i = 0;
 	alloc = ft_count_dig_hex(nb);
