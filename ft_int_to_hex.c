@@ -6,11 +6,11 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:30:37 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:38:13 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:40:07 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_count_dig_hex(unsigned int nb)
 {

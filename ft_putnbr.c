@@ -6,11 +6,11 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:21:15 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/19 23:44:04 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:41:36 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr(int n)
 {

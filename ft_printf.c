@@ -6,11 +6,11 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:37:01 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:35:56 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:41:23 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static int	ft_formats(va_list args, const char *str)
 {

@@ -6,11 +6,11 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:13:06 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/19 23:42:43 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:41:40 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 int	ft_putstr(char *s)
 {

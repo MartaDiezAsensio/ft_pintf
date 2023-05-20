@@ -6,11 +6,11 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:32:50 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:00:38 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 13:41:18 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "printf.h"
+#include "ft_printf.h"
 
 static char	*ft_string(unsigned long num, int *strlen)
 {
