@@ -6,16 +6,16 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:31:43 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:41:15 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:03:25 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_count_dig_hex(unsigned int nb)
+static unsigned int	ft_count_dig_hex(unsigned int nb)
 {
-	int	i;
-	int	temp;
+	unsigned int	i;
+	unsigned int	temp;
 
 	i = 0;
 	while (nb != 0)
@@ -36,7 +36,8 @@ int	ft_int_to_hexM(unsigned int nb)
 
 	i = 0;
 	alloc = ft_count_dig_hex(nb);
-	hex = (char *)malloc(sizeof(char) * alloc);
+	hex = (char *)malloc(sizeof(char) * alloc + 1);
+	hex[alloc] = '\0'; 
 	while (nb != 0)
 	{
 		temp = nb % 16;

@@ -6,20 +6,20 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:13:55 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 21:33:20 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 23:01:43 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <limits.h>
 
 int main()
 {
 	char	str[] = "hello";
 	int	digits;
 	char	*s;
-
-	//printf("%d", printf(" %p \n", -1));
-	//ft_printf(" %p \n", -1);
-	printf(" %u \n", -3);
-	ft_printf(" %u ", -3);
+	
+	printf(" %x %x %x %x %x %x %x\n", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	ft_printf(" %x %x %x %x %x %x %x", INT_MAX, INT_MIN, LONG_MAX, LONG_MIN, ULONG_MAX, 0, -42);
+	
 }

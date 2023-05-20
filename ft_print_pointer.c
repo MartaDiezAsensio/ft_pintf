@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:32:50 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:41:18 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 22:48:11 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int	ft_print_pointer(unsigned long num)
 		if ((temp % 16) < 10)
 			print[i + 1] = (temp % 16) + '0';
 		else
-			print[i + 1] = (temp % 16) + '7';
+			print[i + 1] = (temp % 16) + 'a' - 10;
 		temp = temp / 16;
 	}
 	i = ft_strlen(print) + ft_putstr("0x");

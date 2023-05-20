@@ -6,15 +6,15 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:30:37 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 13:40:07 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/20 22:58:37 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_count_dig_hex(unsigned int nb)
+static unsigned int	ft_count_dig_hex(unsigned int nb)
 {
-	int				i;
+	unsigned int	i;
 	unsigned int	temp;
 
 	i = 0;
@@ -29,13 +29,15 @@ static int	ft_count_dig_hex(unsigned int nb)
 
 int	ft_int_to_hex(unsigned int nb)
 {
-	int					alloc;
+	unsigned int		alloc;
 	unsigned int		temp;
 	char				*hex;
 	int					i;
 
 	i = 0;
 	alloc = ft_count_dig_hex(nb);
+	if (nb == 0)
+		write(1, "0", 1);
 	hex = (char *)malloc(sizeof(char) * (alloc + 1));
 	if (!hex)
 		return (0);
