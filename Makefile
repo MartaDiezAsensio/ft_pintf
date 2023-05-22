@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/20 12:56:14 by mdiez-as          #+#    #+#              #
-#    Updated: 2023/05/20 13:07:11 by mdiez-as         ###   ########.fr        #
+#    Updated: 2023/05/22 19:26:12 by mdiez-as         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,8 +28,8 @@ SRCS	=  ft_strlen.c			\
 		  ft_putstr.c			\
 		  ft_putnbr.c			\
 		  ft_print_pointer.c	\
-		  ft_int_to_hex.c		\
-		  ft_int_to_hexM.c		\
+		  ft_print_hex.c		\
+		  ft_print_hex2.c		\
 		  ft_printf.c			\
 		  ft_putnbr_u.c			\
 

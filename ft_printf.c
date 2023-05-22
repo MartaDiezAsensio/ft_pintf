@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:37:01 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 22:22:05 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/22 19:28:52 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,12 @@ static int	ft_formats(va_list args, const char *str)
 	else if (*(str + 1) == 'u')
 		i += ft_putnbr_u(va_arg(args, unsigned int));
 	else if (*(str + 1) == 'x')
-		i += ft_int_to_hex(va_arg(args, unsigned int));
+		i += ft_print_hex(va_arg(args, unsigned int));
 	else if (*(str + 1) == 'X')
-		i += ft_int_to_hexM(va_arg(args, unsigned int));
+		i += ft_print_hex2(va_arg(args, unsigned int));
 	else if (*(str + 1) == '%')
 	{
 		write(1, "%", 1);
-		va_arg(args, int);
 		i++;
 	}
 	else
