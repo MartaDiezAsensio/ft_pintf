@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:37:01 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/22 19:28:52 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/22 20:23:33 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ static int	ft_formats(va_list args, const char *str)
 		i += ft_print_hex2(va_arg(args, unsigned int));
 	else if (*(str + 1) == '%')
 	{
-		write(1, "%", 1);
+		if (write(1, "%", 1) == -1)
+			return -1;
 		i++;
 	}
 	else
@@ -48,17 +49,26 @@ int	ft_printf(const char *str, ...)
 	va_list	args;
 	va_start(args, str);
 	int	i;
+	int ret;
 
 	i = 0;
+	ret = 0;
 	while (*str != '\0')
 	{
 		if (*str == '%')
 		{
-			i += ft_formats(args, str);
+			ret = ft_formats(args, str);
+			if(ret == - 1)
+				return (-1);
+				i += ret;
 			str++;
 		}
-		else
-			i += ft_putchar(*str);
+		else{
+			ret = ft_putchar(*str);
+			if(ret == - 1)
+				return (-1);
+			i += ret;
+		}
 		str++;
 	}
 	return (i);

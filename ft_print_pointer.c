@@ -6,54 +6,64 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:32:50 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/20 22:48:11 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:04:17 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*ft_string(unsigned long num, int *strlen)
+int size_pointer_hexa(unsigned long num)
 {
-	int				i;
-	unsigned long	temp;
-	char			*str;
+	int lenght;
 
-	i = 0;
-	temp = num;
-	while (temp != 0)
+	lenght = 0;
+	// if(num  == 0)
+	// 	return (1);
+	while (num)
 	{
-		temp = temp / 16;
-		i++;
+		num /= 16;
+		lenght++;
 	}
-	str = calloc(i + 1, sizeof(char));
-	*strlen = i - 1;
-	return (str);
+	return (lenght);
+}
+
+int	ft_print_pointer_hexa(unsigned long num)
+{
+	char			*print;
+	int				i;
+
+	i = size_pointer_hexa(num);
+	print = malloc(sizeof(char) * (i + 1));
+	if (!print)
+		return (-1);
+	print[i] = '\0';
+	while (num != 0 && i-- >= 0)
+	{
+		if ((num % 16) < 10)
+			print[i] = (num % 16) + '0';
+		else
+			print[i] = (num % 16) + 'a' - 10;
+		num = num / 16;
+	}
+	i = ft_putstr(print);
+	free(print);
+	return (i);
 }
 
 int	ft_print_pointer(unsigned long num)
 {
-	unsigned long	temp;
-	char			*print;
-	int				i;
-	int				*iptr;
+	int i;
+	int ret;
 
-	iptr = &i;
-	temp = num;
-	print = ft_string(num, iptr);
-	if (!print)
-		return (0);
-	while (temp != 0 && i-- >= 0)
-	{
-		if ((temp % 16) < 10)
-			print[i + 1] = (temp % 16) + '0';
-		else
-			print[i + 1] = (temp % 16) + 'a' - 10;
-		temp = temp / 16;
-	}
-	i = ft_strlen(print) + ft_putstr("0x");
-	ft_putstr(print);
-	free(print);
+	i = 2;
+	if(ft_putstr("0x") == -1)
+		return (-1);
 	if (num == 0)
-		i += ft_putchar('0');
+		ret = ft_putchar('0');
+	else
+		ret = ft_print_pointer_hexa(num);
+	if(ret == -1)
+		return(-1);
+	i += ret;
 	return (i);
 }

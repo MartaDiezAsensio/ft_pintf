@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:13:55 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/22 19:29:46 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/22 21:36:29 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,5 @@
 
 int main()
 {
-	char	str[] = "hello";
-	int	digits;
-	char	*s;
-	
-	printf("%%%c\n", 'x');
-	ft_printf("%%%c", 'x');
+	//ft_putnbr(1234);
 }
