@@ -6,56 +6,55 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/07 20:21:15 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/22 21:35:59 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/23 20:53:54 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_digs(int n)
+static int	ft_putdigits(int n)
 {
 	int	i;
+	int ret;
 
 	i = 0;
-	while (n)
+	if (n / 10)
 	{
-		n /= 10;
-		i++;
+		ret = ft_putdigits(n / 10);
+		if(ret == -1)
+			return (-1);
+		i += ret;
+		ret = ft_putdigits(n % 10);
+		if(ret == -1)
+			return (-1);
+		i += ret;
 	}
-	printf("Estoy contando los digitos y hay %d", i);
+	else
+	{
+		if(ft_putchar('0' + n) == -1)
+			return (-1);
+		i++;
+	}	
 	return (i);
 }
 
-int	ft_putnbr(int n)
+int ft_putnbr(int n )
 {
-	int	i;
-	int	ret;
-
-	i = 0;
-	ret = 0;
+	int ret;
+	int length;
+	
+	length = 0;
+	if (n == -2147483648)
+		return ft_putstr("-2147483648");
 	if (n < 0)
 	{
-		if (n == -2147483648)
-		{
-			ret = ft_putstr("-2147483648");
-			if (ret == -1)
-				return (-1);
-			return (i += ret);
-		}
-		ret = ft_putchar('-');
-		if (ret == -1)
+		if(ft_putchar('-') == -1)
 			return (-1);
-		i += ret;
+		length = 1;
 		n *= -1;
 	}
-	if (n / 10)
-	{
-		i += ft_putnbr(n / 10);
-		i += ft_putnbr(n % 10);
-	}
-	else
-		i += ft_putchar('0' + n);
-	if (i <= ft_digs(n))
+	ret = ft_putdigits(n);
+	if(ret == -1)
 		return (-1);
-	return (i);
+	return(length + ret);
 }
