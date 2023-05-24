@@ -6,31 +6,29 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:32:50 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/22 21:04:17 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:49:05 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int size_pointer_hexa(unsigned long num)
+int	size_pointer_hexa(unsigned long num)
 {
-	int lenght;
+	int	length;
 
-	lenght = 0;
-	// if(num  == 0)
-	// 	return (1);
+	length = 0;
 	while (num)
 	{
 		num /= 16;
-		lenght++;
+		length++;
 	}
-	return (lenght);
+	return (length);
 }
 
 int	ft_print_pointer_hexa(unsigned long num)
 {
-	char			*print;
-	int				i;
+	char	*print;
+	int		i;
 
 	i = size_pointer_hexa(num);
 	print = malloc(sizeof(char) * (i + 1));
@@ -52,18 +50,18 @@ int	ft_print_pointer_hexa(unsigned long num)
 
 int	ft_print_pointer(unsigned long num)
 {
-	int i;
-	int ret;
+	int	i;
+	int	ret;
 
 	i = 2;
-	if(ft_putstr("0x") == -1)
+	if (ft_putstr("0x") == -1)
 		return (-1);
 	if (num == 0)
 		ret = ft_putchar('0');
 	else
 		ret = ft_print_pointer_hexa(num);
-	if(ret == -1)
-		return(-1);
+	if (ret == -1)
+		return (-1);
 	i += ret;
 	return (i);
 }

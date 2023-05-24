@@ -6,7 +6,7 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 23:30:37 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/23 22:20:07 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:48:15 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ static int	ft_dig_hex(unsigned int nb)
 	}
 	return (len);
 }
-
 
 static int	ft_put_hex2(unsigned int nb)
 {
@@ -72,4 +71,3 @@ int	ft_print_hex2(unsigned int nb)
 			return (-1);
 	return (ft_dig_hex(nb));
 }
-

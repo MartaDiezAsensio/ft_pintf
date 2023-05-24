@@ -6,14 +6,14 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 20:13:55 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/23 21:25:45 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/24 18:53:22 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include <limits.h>
+// #include "ft_printf.h"
+// #include <limits.h>
 
-int main()
-{
-	ft_print_hex(10);
-}
+// int main()
+// {
+// 	ft_print_hex(-10);
+// }
