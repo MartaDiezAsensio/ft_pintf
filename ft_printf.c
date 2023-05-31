@@ -6,11 +6,19 @@
 /*   By: mdiez-as <mdiez-as@student.42barcelona.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/19 21:37:01 by mdiez-as          #+#    #+#             */
-/*   Updated: 2023/05/24 18:52:29 by mdiez-as         ###   ########.fr       */
+/*   Updated: 2023/05/31 18:22:10 by mdiez-as         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static int	ft_customwrite(void)
+{
+	if (write(1, "%", 1) == -1)
+		return (-1);
+	else
+		return (1);
+}
 
 static int	ft_formats(va_list args, const char *str)
 {
@@ -34,11 +42,7 @@ static int	ft_formats(va_list args, const char *str)
 	else if (*(str + 1) == 'X')
 		i += ft_print_hex2(va_arg(args, unsigned int));
 	else if (*(str + 1) == '%')
-	{
-		if (write(1, "%", 1) == -1)
-			return (-1);
-		i++;
-	}
+		i += ft_customwrite();
 	else
 		return (-1);
 	return (i);
@@ -57,19 +61,17 @@ int	ft_printf(const char *str, ...)
 	{
 		if (*str == '%')
 		{
-			ret = ft_formats(args, str);
+			ret = ft_formats(args, str++);
 			if (ret == -1)
 				return (-1);
-				i += ret;
-			str++;
 		}
 		else
 		{
 			ret = ft_putchar(*str);
 			if (ret == -1)
 				return (-1);
-			i += ret;
 		}
+		i += ret;
 		str++;
 	}
 	return (i);
